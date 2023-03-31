@@ -1,6 +1,6 @@
 Name:		texlive-schola-otf
 Version:	64734
-Release:	1
+Release:	2
 Summary:	Using the OpenType fonts TeX Gyre schola
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/schola-otf
