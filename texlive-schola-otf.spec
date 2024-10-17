@@ -3,7 +3,7 @@ Version:	64734
 Release:	2
 Summary:	Using the OpenType fonts TeX Gyre schola
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/schola-otf
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/schola-otf
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/schola-otf.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/schola-otf.doc.r%{version}.tar.xz
