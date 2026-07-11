@@ -1,38 +1,22 @@
-Name:		texlive-schola-otf
-Version:	64734
-Release:	2
+%global tl_name schola-otf
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.01
+Release:	%{tl_revision}.1
 Summary:	Using the OpenType fonts TeX Gyre schola
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/schola-otf
+URL:		https://www.ctan.org/tex-archive/fonts/schola-otf
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/schola-otf.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/schola-otf.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/schola-otf.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/schola-otf.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package can only be used with LuaLaTeX or XeLaTeX. It does
-the font setting for the OpenType font TeX Gyre Schola for text
-and math. The missing typefaces like bold math and slanted text
-are also defined
+This package can only be used with LuaLaTeX or XeLaTeX. It does the font
+setting for the OpenType font TeX Gyre Schola for text and math. The
+missing typefaces like bold math and slanted text are also defined
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/schola-otf
-%doc %{_texmfdistdir}/doc/fonts/schola-otf
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
